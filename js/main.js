@@ -1,3 +1,6 @@
+import { formatDistance } from 'date-fns'
+import {fr} from 'date-fns/esm/locale'
+
 // Global vars
 let currentPage = 1;
 let totalPage;
@@ -45,30 +48,38 @@ function updateList(resp) {
   // vote_average: 5.4
   // vote_count: 39
   results.forEach(item => {
-    DOM_MoviesList.innerHTML += movie_item(item.original_title, item.poster_path);
+    DOM_MoviesList.innerHTML += movie_item(item.original_title, item.poster_path, item.release_date, item.popularity, item.vote_average, item.vote_count);
   })
 }
 
 // generate movie item dom
-function movie_item(title, poster_path) {
+function movie_item(title, poster_path, release_date, popularity, vote_average, vote_count) {
   return "" +
-    "<li class=\"movies__item\">"
-    + "<figure class='movies__figure'>\n" +
+    "<li class=\"movies__item\">" +
+    "<div class=\"movies__infos\">" +
+    "  <div class=\"movies__release_date\">Sortie il y a " + formatDistance(new Date(release_date), new Date(), {locale: fr}) + "</div>" +
+    "  <div class=\"movies__popularity\">Popularité de <b>" + popularity + "</b></div>" +
+    "  <div class=\"movies__votes\">" +
+    "    <div class=\"movies__vote_average\">Moyenne de <b>" + vote_average + "</b></div>" +
+    "    <div class=\"movies__vote_count\">avec <b>" + vote_count + "</b> votes</div>" +
+    "  </div>" +
+    "</div>"
+    + "<figure class='movies__figure'>" +
     "    <img src=\"http://image.tmdb.org/t/p/w500" + poster_path + "\"" +
     "         alt=\"Elephant at sunset\"" +
-    "         class='movies__img'>\n" +
-    "    <figcaption class='movies__caption'>" + title + "</figcaption>\n" +
-    "</figure>\n"
+    "         class='movies__img'>" +
+    "    <figcaption class='movies__caption'>" + title + "</figcaption>" +
+    "</figure>"
     + "</li>";
 }
 
 // Navigation
 function prevPage() {
-  if(currentPage > 1) {
+  if (currentPage > 1) {
     currentPage -= 1;
     requestMovies(updateList);
 
-    if(currentPage === 1) {
+    if (currentPage === 1) {
       DOM_PrevButton.disabled = true;
     }
 
@@ -77,7 +88,7 @@ function prevPage() {
 }
 
 function nextPage() {
-  if(currentPage === 1) {
+  if (currentPage === 1) {
     DOM_PrevButton.disabled = false;
   }
 

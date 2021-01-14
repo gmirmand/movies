@@ -1,5 +1,6 @@
-@import "fonts",
-"variables";
+@import "abstract/fonts",
+"abstract/variables",
+"abstract/mixins";
 
 @import "global",
 "home";

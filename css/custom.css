@@ -25,13 +25,20 @@ body {
   margin: 0; }
 
 .movies__item {
-  width: calc(33% - 2em);
+  width: 100%;
   list-style: none;
-  max-height: 30em;
   color: #efefef;
   text-align: center;
   margin: 1em;
-  position: relative; }
+  position: relative;
+  max-height: 200vw; }
+  @media (min-width: 479px) {
+    .movies__item {
+      width: calc(50% - 2em);
+      max-height: 30em; } }
+  @media (min-width: 767px) {
+    .movies__item {
+      width: calc(33% - 2em); } }
   .movies__item:hover {
     cursor: pointer; }
     .movies__item:hover .movies__img {

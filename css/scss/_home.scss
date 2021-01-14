@@ -27,13 +27,22 @@
   }
 
   &__item {
-    width: calc(33% - 2em);
+    width: 100%;
     list-style: none;
-    max-height: 30em;
     color: $color-light;
     text-align: center;
     margin: 1em;
     position: relative;
+    max-height: 200vw;
+
+    @include breakpoint(s) {
+      width: calc(50% - 2em);
+      max-height: 30em;
+    }
+
+    @include breakpoint(m) {
+      width: calc(33% - 2em);
+    }
 
     &:hover {
       cursor: pointer;

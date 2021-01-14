@@ -3,6 +3,9 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #040303; }
 
+.movies__wrapper {
+  padding-bottom: 3em; }
+
 .movies__list {
   display: flex;
   flex-wrap: wrap;
@@ -17,7 +20,7 @@ body {
   width: calc(33% - 2em);
   list-style: none;
   max-height: 30em;
-  color: #EDF7F6;
+  color: #efefef;
   text-align: center;
   margin: 1em;
   position: relative; }
@@ -69,3 +72,20 @@ body {
   text-align: center;
   backdrop-filter: blur(0.25em);
   z-index: 999; }
+
+.movies__prev, .movies__next {
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0.25em;
+  transition: all 0.15s ease; }
+  .movies__prev:hover:disabled, .movies__next:hover:disabled {
+    cursor: not-allowed; }
+  .movies__prev:hover:enabled, .movies__next:hover:enabled {
+    background-color: #F19953;
+    cursor: pointer;
+    color: #efefef; }
+
+.movies__page {
+  color: #efefef;
+  padding: 1em;
+  text-shadow: 0 0 10px black; }

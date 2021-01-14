@@ -1,4 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 body {
+  font-family: "Roboto", sans-serif;
   background-color: #040303; }
 
 .movies__list {
@@ -7,17 +9,57 @@ body {
   max-width: 1024px;
   margin: 0 auto; }
 
+.movies__figure {
+  overflow: hidden;
+  margin: 0; }
+
 .movies__item {
-  width: 33%;
+  width: calc(33% - 2em);
   list-style: none;
   max-height: 30em;
   color: #EDF7F6;
-  text-align: center; }
+  text-align: center;
+  margin: 1em;
+  position: relative; }
+  .movies__item:hover {
+    cursor: pointer; }
+    .movies__item:hover .movies__img {
+      transform: scale(1.05); }
+    .movies__item:hover .movies__caption {
+      opacity: 1; }
+    .movies__item:hover:before {
+      opacity: 1; }
+  .movies__item:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 50%;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(38, 96, 164, 0.75) 100%);
+    opacity: 0;
+    transition: all 0.33s ease; }
 
 .movies__img {
   height: 100%;
   width: 100%;
-  object-fit: cover; }
+  object-fit: cover;
+  transition: all 0.33s ease; }
+
+.movies__caption {
+  opacity: 0;
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  transition: all 0.33s ease;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  padding: 1em;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  box-sizing: border-box; }
 
 .movies__navigation {
   position: fixed;

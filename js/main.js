@@ -53,7 +53,7 @@ function updateList(resp) {
 function movie_item(title, poster_path) {
   return "" +
     "<li class=\"movies__item\">"
-    + "<figure>\n" +
+    + "<figure class='movies__figure'>\n" +
     "    <img src=\"http://image.tmdb.org/t/p/w500" + poster_path + "\"" +
     "         alt=\"Elephant at sunset\"" +
     "         class='movies__img'>\n" +

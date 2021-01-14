@@ -5,11 +5,20 @@
     padding-bottom: 3em;
   }
 
+  &__header {
+    color: $color-light;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 1em;
+    box-sizing: border-box;
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;
     max-width: 1024px;
     margin: 0 auto;
+    padding: 0;
   }
 
   &__figure {

@@ -6,11 +6,19 @@ body {
 .movies__wrapper {
   padding-bottom: 3em; }
 
+.movies__header {
+  color: #efefef;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1em;
+  box-sizing: border-box; }
+
 .movies__list {
   display: flex;
   flex-wrap: wrap;
   max-width: 1024px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 0; }
 
 .movies__figure {
   overflow: hidden;

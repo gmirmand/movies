@@ -1,0 +1,28 @@
+body {
+  background-color: #040303; }
+
+.movies__list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1024px;
+  margin: 0 auto; }
+
+.movies__item {
+  width: 33%;
+  list-style: none;
+  max-height: 30em;
+  color: #EDF7F6;
+  text-align: center; }
+
+.movies__img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; }
+
+.movies__navigation {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 1em;
+  text-align: center;
+  backdrop-filter: blur(0.25em); }

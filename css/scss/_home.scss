@@ -1,0 +1,31 @@
+.movies {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  &__item {
+    width: 33%;
+    list-style: none;
+    max-height: 30em;
+    color: $color-light;
+    text-align: center;
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__navigation {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 1em;
+    text-align: center;
+    backdrop-filter: blur(0.25em);
+  }
+}

@@ -179,4 +179,22 @@
     padding: 1em;
     text-shadow: 0 0 10px rgba(0, 0, 0, 1);
   }
+
+  &__nav-github {
+    width: 100%;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    margin: 1em 1em 0;
+
+    @include breakpoint(m) {
+      width: auto;
+      float: right;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: $color-light;
+      }
+    }
+  }
 }

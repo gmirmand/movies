@@ -134,3 +134,17 @@ body {
   color: #efefef;
   padding: 1em;
   text-shadow: 0 0 10px black; }
+
+.movies__nav-github {
+  width: 100%;
+  color: #2660A4;
+  display: inline-block;
+  text-decoration: none;
+  margin: 1em 1em 0; }
+  @media screen and (min-width: 767px) {
+    .movies__nav-github {
+      width: auto;
+      float: right;
+      transition: all 0.2s ease; }
+      .movies__nav-github:hover {
+        color: #efefef; } }

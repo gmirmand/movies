@@ -12,7 +12,7 @@ $breakpoints: (
   // Get the breakpoint value.
   $breakpoint-value: map-get($breakpoints, $breakpoint);
 
-  @media (min-width: ($breakpoint-value - 1)) {
+  @media screen and (min-width: ($breakpoint-value - 1)) {
     @content;
   }
 }

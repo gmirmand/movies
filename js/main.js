@@ -1,4 +1,5 @@
-import { formatDistance } from 'date-fns'
+// Used to convert date in a cool format
+import {formatDistance} from 'date-fns'
 import {fr} from 'date-fns/esm/locale'
 
 // Global vars
@@ -11,26 +12,21 @@ let DOM_PageNumber = document.querySelector('.movies__page')
 
 // API call
 function requestMovies(callback) {
-  var xobj = new XMLHttpRequest();
-  // true parameter denotes asynchronous
-  xobj.open('GET', "https://api.themoviedb.org/3/movie/popular?api_key=3408c970aac0191155692ae984674cf4&language=fr-FR&page=" + currentPage, true);
-  xobj.onreadystatechange = function () {
-    if (xobj.readyState == 4 && xobj.status == "200") {
-      // This marks that the response has been successfully retrieved from the server
-      // Utilize callback
-      callback(xobj.responseText);
-    }
-  };
-  xobj.send(null);
+  fetch("https://api.themoviedb.org/3/movie/popular?api_key=3408c970aac0191155692ae984674cf4&language=fr-FR&page=" + currentPage).then(
+    resp => resp.json() // return a promise
+  ).then(resp => {
+    totalPage = resp.total_pages;
+    return updateList(resp.results);
+  }).catch(err => {
+    console.error(err);
+  })
 }
 
 // Call updateList function
-requestMovies(updateList);
+requestMovies();
 
 // update list of movies
-function updateList(resp) {
-  let results = JSON.parse(resp).results;
-  totalPage = JSON.parse(resp).total_pages;
+function updateList(results) {
   DOM_MoviesList.innerHTML = "";
 
   // Item format :
@@ -79,7 +75,7 @@ function prevPage() {
   if (currentPage > 1) {
     // Update list
     currentPage -= 1;
-    requestMovies(updateList);
+    requestMovies();
 
     // min page verification
     if (currentPage === 1) {
@@ -87,7 +83,7 @@ function prevPage() {
     }
 
     // Re-enable next button
-    if(currentPage === totalPage - 1) {
+    if (currentPage === totalPage - 1) {
       DOM_NextButton.disabled = false;
     }
 
@@ -104,10 +100,10 @@ function nextPage() {
 
   // Update list
   currentPage += 1;
-  requestMovies(updateList);
+  requestMovies();
 
   // max page verification
-  if(currentPage === totalPage) {
+  if (currentPage === totalPage) {
     DOM_NextButton.disabled = true;
   }
 

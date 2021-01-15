@@ -1,4 +1,4 @@
-# Gmirmand movies - Les films populaires du moment
+# Gmirmand movies - [movies.gmirmand.fr](https://movies.gmirmand.fr/)
 Liste des films populaires actuelles tirées de TMDb. Cette liste se met à jour tous les jours.
 
 ## Structure
@@ -18,4 +18,4 @@ Fichiers importants :
 - [x] Intégration css (scss compilé) + responsive
 - [x] Redirection sur tmdb au clique
 - [x] Petit travail de référencement (ogs)
-- [x] Hébergement
+- [x] Hébergement ([movies.gmirmand.fr](https://movies.gmirmand.fr/))

@@ -10,3 +10,12 @@ Fichiers importants :
 - [js/main.js](/js/main.js)
 - [css/scss](/css/scss)
 
+## Done list
+- [x] Récupération des films via l'API (en fetch)
+- [x] Listing des films
+- [x] Affichage des informations du film (au hover + utilisation de [date-fns](https://date-fns.org/) pour afficher 'Sortie il y a...'")
+- [x] Pagination (en bas de page avec contrôle des min/max pages)
+- [x] Intégration css (scss compilé) + responsive
+- [x] Redirection sur tmdb au clique
+- [x] Petit travail de référencement (ogs)
+- [x] Hébergement

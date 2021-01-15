@@ -12,7 +12,7 @@ let DOM_PageNumber = document.querySelector('.movies__page')
 
 // API call
 function requestMovies(callback) {
-  fetch("https://api.themoviedb.org/3/movie/popular?api_key=3408c970aac0191155692ae984674cf4&language=fr-FR&page=" + currentPage).then(
+  fetch("https://api.themoviedb.org/3/movie/popular?api_key=3408c970aac0191155692ae984674cf4&language=fr-FR&region=FR&page=" + currentPage).then(
     resp => resp.json() // return a promise
   ).then(resp => {
     totalPage = resp.total_pages;

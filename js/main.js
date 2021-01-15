@@ -30,6 +30,7 @@ requestMovies(updateList);
 // update list of movies
 function updateList(resp) {
   let results = JSON.parse(resp).results;
+  totalPage = JSON.parse(resp).total_pages;
   DOM_MoviesList.innerHTML = "";
 
   // Item format :
@@ -76,24 +77,41 @@ function movie_item(title, poster_path, release_date, popularity, vote_average, 
 // Navigation
 function prevPage() {
   if (currentPage > 1) {
+    // Update list
     currentPage -= 1;
     requestMovies(updateList);
 
+    // min page verification
     if (currentPage === 1) {
       DOM_PrevButton.disabled = true;
     }
 
+    // Re-enable next button
+    if(currentPage === totalPage - 1) {
+      DOM_NextButton.disabled = false;
+    }
+
+    // Update page number
     DOM_PageNumber.innerHTML = currentPage;
   }
 }
 
 function nextPage() {
+  // Re-enable prev button
   if (currentPage === 1) {
     DOM_PrevButton.disabled = false;
   }
 
+  // Update list
   currentPage += 1;
   requestMovies(updateList);
+
+  // max page verification
+  if(currentPage === totalPage) {
+    DOM_NextButton.disabled = true;
+  }
+
+  // Update page number
   DOM_PageNumber.innerHTML = currentPage;
 }
 

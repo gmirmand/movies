@@ -53,21 +53,23 @@ function updateList(results) {
 function movie_item(title, poster_path, release_date, popularity, vote_average, vote_count) {
   return "" +
     "<li class=\"movies__item\">" +
-    "<div class=\"movies__infos\">" +
-    "  <div class=\"movies__release_date\">Sortie il y a " + formatDistance(new Date(release_date), new Date(), {locale: fr}) + "</div>" +
-    "  <div class=\"movies__popularity\">Popularité de <b>" + popularity + "</b></div>" +
-    "  <div class=\"movies__votes\">" +
-    "    <div class=\"movies__vote_average\">Moyenne de <b>" + vote_average + "</b></div>" +
-    "    <div class=\"movies__vote_count\">avec <b>" + vote_count + "</b> votes</div>" +
-    "  </div>" +
-    "</div>"
+    " <a class=\"movies__link\" href=\"https://www.themoviedb.org/search?language=fr&query=" + title + "\" target='_blank'>" +
+    " <div class=\"movies__infos\">" +
+    "   <div class=\"movies__release_date\">Sortie il y a " + formatDistance(new Date(release_date), new Date(), {locale: fr}) + "</div>" +
+    "    <div class=\"movies__popularity\">Popularité de <b>" + popularity + "</b></div>" +
+    "   <div class=\"movies__votes\">" +
+    "      <div class=\"movies__vote_average\">Moyenne de <b>" + vote_average + "</b></div>" +
+    "      <div class=\"movies__vote_count\">avec <b>" + vote_count + "</b> votes</div>" +
+    "   </div>" +
+    " </div>"
     + "<figure class='movies__figure'>" +
     "    <img src=\"http://image.tmdb.org/t/p/w500" + poster_path + "\"" +
     "         alt=\"Elephant at sunset\"" +
     "         class='movies__img'>" +
     "    <figcaption class='movies__caption'>" + title + "</figcaption>" +
-    "</figure>"
-    + "</li>";
+    " </figure>"
+    +"</a>"
+    +"</li>";
 }
 
 // Navigation

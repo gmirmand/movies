@@ -24,6 +24,9 @@ body {
   overflow: hidden;
   margin: 0; }
 
+.movies__link {
+  color: #efefef; }
+
 .movies__item {
   width: 100%;
   list-style: none;
@@ -57,7 +60,8 @@ body {
     z-index: 1;
     background: linear-gradient(180deg, rgba(38, 96, 164, 0.75) 0%, rgba(0, 0, 0, 0) 50%, rgba(38, 96, 164, 0.75) 100%);
     opacity: 0;
-    transition: all 0.33s ease; }
+    transition: all 0.33s ease;
+    pointer-events: none; }
 
 .movies__infos {
   position: absolute;

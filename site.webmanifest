@@ -1,6 +1,6 @@
 {
-  "short_name": "",
-  "name": "",
+  "short_name": "Movies",
+  "name": "Movies Gmirmand",
   "icons": [{
     "src": "icon.png",
     "type": "image/png",

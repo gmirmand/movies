@@ -2,6 +2,7 @@
   $this: &;
 
   overflow: hidden;
+  user-select: none;
 
   &__wrapper {
     padding-bottom: 3em;
@@ -17,7 +18,6 @@
     max-width: 1024px;
     margin: 0 auto;
     padding: 1em;
-    user-select: none;
   }
 
   &__title {
@@ -29,8 +29,9 @@
     display: flex;
     flex-wrap: wrap;
     max-width: 1024px;
-    margin: 0 auto;
+    margin: 0 auto 5em;
     padding: 0;
+    justify-content: center;
   }
 
   &__figure {

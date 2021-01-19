@@ -26,7 +26,7 @@ var c = document.getElementById("c");
 var ctx = c.getContext("2d");
 var cH;
 var cW;
-var bgColor = "#FF6138";
+var bgColor = "#282741";
 var animations = [];
 var circles = [];
 

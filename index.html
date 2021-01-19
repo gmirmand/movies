@@ -39,35 +39,39 @@
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
+<body class="movies">
 <div class="movies__wrapper">
-  <div class="movies__header">
-    <h1 class="movies__title">
-      Liste des films populaires du moment
-    </h1>
-    <span class="movies__explain">
-      Liste mise à jour quotidiennement via TMDb.
-    </span>
-  </div>
+  <canvas id="c"></canvas>
+  <div class="movies__inner-wrapper">
+    <div class="movies__header">
+      <h1 class="movies__title" data-text="MOVIES.">
+        MOVIES.
+      </h1>
+      <span class="movies__explain">
+          Liste des films populaires du moment. Mis à jour quotidiennement via TMDb.
+        </span>
+    </div>
 
-  <ul class="movies__list">
-  </ul>
+    <ul class="movies__list">
+    </ul>
 
-  <div class="movies__navigation">
-    <button class="movies__prev" disabled>
-      Précédent
-    </button>
-    <span class="movies__page">
+    <div class="movies__navigation">
+      <button class="movies__prev" disabled>
+        Précédent
+      </button>
+      <span class="movies__page">
         1
       </span>
-    <button class="movies__next">
-      Suivant
-    </button>
-    <a class="movies__nav-github" href="https://github.com/gmirmand/movies">> Projet github <</a>
+      <button class="movies__next">
+        Suivant
+      </button>
+      <a class="movies__nav-github" href="https://github.com/gmirmand/movies">> Projet github <</a>
+    </div>
   </div>
 </div>
 
 <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/1.0.0/anime.min.js"></script>
 <script src="js/plugins.js"></script>
 <script type="module" src="js/main.js"></script>
 </body>

@@ -1,8 +1,15 @@
 .movies {
   $this: &;
 
+  overflow: hidden;
+
   &__wrapper {
     padding-bottom: 3em;
+  }
+
+  &__inner-wrapper {
+    max-height: 100vh;
+    overflow-y: auto;
   }
 
   &__header {
@@ -10,6 +17,12 @@
     max-width: 1024px;
     margin: 0 auto;
     padding: 1em;
+    user-select: none;
+  }
+
+  &__title {
+    line-height: 1;
+    margin-bottom: 0;
   }
 
   &__list {

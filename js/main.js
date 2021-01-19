@@ -9,6 +9,7 @@ let DOM_MoviesList = document.querySelector('.movies__list');
 let DOM_PrevButton = document.querySelector('.movies__prev');
 let DOM_NextButton = document.querySelector('.movies__next')
 let DOM_PageNumber = document.querySelector('.movies__page')
+let DOM_InnerWrapper = document.querySelector('.movies__inner-wrapper')
 
 // API call
 function requestMovies(callback) {
@@ -46,7 +47,12 @@ function updateList(results) {
   // vote_count: 39
   results.forEach(item => {
     DOM_MoviesList.innerHTML += movie_item(item.original_title, item.poster_path, item.release_date, item.popularity, item.vote_average, item.vote_count);
-  })
+  });
+
+  DOM_InnerWrapper.scroll({
+    top: 0,
+    behavior: 'smooth'  // 👈
+  });
 }
 
 // generate movie item dom
